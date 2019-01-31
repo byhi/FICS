@@ -6,7 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+
 @Repository
-public interface ModulRepository extends CrudRepository<Modul, Long> , JpaRepository<Modul, Long> {
+public interface ModulRepository extends CrudRepository<Modul, Long>, JpaRepository<Modul, Long> {
     Optional<Modul> findById(Long aLong);
 }
