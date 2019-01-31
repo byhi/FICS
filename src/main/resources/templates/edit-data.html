@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="col-sm-12">
+        <h2>Modul módosítás</h2>
+<form action="#" th:action="@{/edit-data}" th:object="${systemmodul}" method="post">
+    <table>
+        <tr>
+
+            <td><label for="id">ID:</label><input type="text" id="id" class="form-control" th:field="*{id}" disabled/></td>
+        </tr>
+        <tr>
+
+            <td><label for="sys">Rendszer:</label><input type="text" id="sys" class="form-control" th:field="*{r_id.name}" /></td>
+            <td th:if="${#fields.hasErrors('r_id.name')}" th:errors="*{r_id.name}">Name Error</td>
+        </tr>
+        <tr>
+
+            <td><label for="sysdesc">Rendszer leírás:</label><textarea id="sysdesc" class="form-control" rows="10" type="text" th:field="*{r_id.desc}" /></td>
+            <td th:if="${#fields.hasErrors('r_id.desc')}" th:errors="*{r_id.desc}">Age Error</td>
+        </tr>
+        <tr>
+        <tr>
+
+            <td><label for="mod">Modul:</label><input type="text" id="mod" class="form-control" th:field="*{name}" /></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+        </tr>
+        <tr>
+
+            <td><label for="moddesc">Modul leírás:</label><input type="text" id="moddesc" class="form-control" th:field="*{desc}" /></td>
+            <td th:if="${#fields.hasErrors('desc')}" th:errors="*{desc}">Age Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit"  class="btn btn-success">Mentés</button></td>
+        </tr>
+    </table>
+</form>
+    </div>
+</div>
+</body>
+</html>
