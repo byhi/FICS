@@ -19,7 +19,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = { FicsApplication.class })
+@ContextConfiguration(classes = {FicsApplication.class})
 public class RendszerServiceTest {
     @TestConfiguration
     static class RendszerServiceImplTestContextConfiguration {
@@ -43,7 +43,7 @@ public class RendszerServiceTest {
         List result = rendszerService.getAllRendszer();
 
         //verify null result was returned
-        assertEquals(new ArrayList<Rendszer>(),result);
+        assertEquals(new ArrayList<Rendszer>(), result);
 
     }
 }

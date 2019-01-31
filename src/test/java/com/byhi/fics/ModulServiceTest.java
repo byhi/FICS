@@ -2,7 +2,7 @@ package com.byhi.fics;
 
 import com.byhi.fics.domain.Modul;
 import com.byhi.fics.repository.ModulRepository;
-import com.byhi.fics.service.ModelServiceImpl;
+import com.byhi.fics.service.ModulServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -12,25 +12,27 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = { FicsApplication.class })
+@ContextConfiguration(classes = {FicsApplication.class})
 public class ModulServiceTest {
 
     @TestConfiguration
     static class ModelServiceImplTestContextConfiguration {
 
         @Bean
-        public ModelServiceImpl modelService() {
-            return new ModelServiceImpl();
+        public ModulServiceImpl modelService() {
+            return new ModulServiceImpl();
         }
     }
 
     @Autowired
-    private ModelServiceImpl modelService;
+    private ModulServiceImpl modelService;
 
     @MockBean
     private ModulRepository modulRepository;
@@ -42,7 +44,7 @@ public class ModulServiceTest {
         List result = modelService.getAllModul();
 
         //verify null result was returned
-        assertEquals(new ArrayList<Modul>(),result);
+        assertEquals(new ArrayList<Modul>(), result);
 
     }
 }
