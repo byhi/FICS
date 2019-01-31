@@ -108,7 +108,8 @@ public class HomeController implements WebMvcConfigurer {
             logger.error(bindingResult.toString());
             return "error";
         }
-        this.rendszerService.save(modul);
+        this.rendszerService.update(modul);
+       //this.rendszerService.save(modul);
         return "redirect:/";
     }
 

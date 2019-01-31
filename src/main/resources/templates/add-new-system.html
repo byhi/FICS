@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Title</title>
+    <title>FICS</title>
 </head>
 <body>
 <div class="container">
@@ -18,14 +18,14 @@
         <form action="#" th:action="@{/add-new-system}" th:object="${newsystem}" method="post">
             <table>
                 <tr>
-                    <td>Name:</td>
-                    <td><input type="text" th:field="*{name}"/></td>
-                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+
+                    <td><label for="sys">Rendszer:</label><input type="text" id="sys" class="form-control" th:field="*{name}"/></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Rendszer Error</td>
                 </tr>
                 <tr>
-                    <td>Age:</td>
-                    <td><input type="text" th:field="*{desc}"/></td>
-                    <td th:if="${#fields.hasErrors('desc')}" th:errors="*{desc}">Age Error</td>
+
+                    <td><label for="des">Leírás:</label><textarea type="text" id="des" rows="10" class="form-control" th:field="*{desc}"/></td>
+                    <td th:if="${#fields.hasErrors('desc')}" th:errors="*{desc}">Leírás Error</td>
                 </tr>
                 <tr>
 

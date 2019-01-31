@@ -10,36 +10,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Title</title>
+    <title>FICS</title>
 </head>
 <body>
 <div class="container">
     <div class="col-sm-12">
-
+        <h2>Modul hozzá adása a rendszerhez</h2>
         <form action="#" th:action="@{/add-new-modul}" th:object="${modul}" method="post">
             <table>
                 <tr>
-                    <td>Rendszer:</td>
-                    <td><select class="form-control" th:field="*{r_id.name}">
+                    <label for="sys">Rendszer leírás:</label>
+                    <td><select class="form-control" th:field="*{r_id.name}" id="sys">
                         <option th:each="i : ${allsystemname}" th:value="${i}" th:text="${i}">
                         </option>
                     </select></td>
-                    <td th:if="${#fields.hasErrors('r_id.desc')}" th:errors="*{r_id.desc}">Age Error</td>
+                    <td th:if="${#fields.hasErrors('r_id.desc')}" th:errors="*{r_id.desc}">Rendszer Error</td>
                 </tr>
 
                 <tr>
-                    <td>Modul:</td>
-                    <td><input type="text" class="form-control" th:field="*{name}"/></td>
-                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+
+
+                    <td><label for="mod">Modul:</label><input type="text" class="form-control" th:field="*{name}" id="mod"/></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Modul Error</td>
                 </tr>
                 <tr>
-                    <td>Leírás:</td>
-                    <td><input type="text" th:field="*{desc}"/></td>
-                    <td th:if="${#fields.hasErrors('desc')}" th:errors="*{desc}">Age Error</td>
+
+
+                    <td><label for="desc">Leírás:</label><textarea type="text" th:field="*{desc}" id="desc" class="form-control" rows="10"/></td>
+                    <td th:if="${#fields.hasErrors('desc')}" th:errors="*{desc}">Leírás Error</td>
                 </tr>
                 <tr>
                     <td>
-                        <button type="submit">Submit</button>
+                        <button type="submit"  class="btn btn-success">Submit</button>
                     </td>
                 </tr>
             </table>

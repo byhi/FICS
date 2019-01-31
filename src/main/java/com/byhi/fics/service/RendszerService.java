@@ -16,4 +16,6 @@ public interface RendszerService {
     void saveRendszer(Rendszer rendszer);
 
     List<String> getAllRendszerNev();
+
+    void update(Modul modul);
 }

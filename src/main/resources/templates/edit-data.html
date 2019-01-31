@@ -10,7 +10,7 @@
     <link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Title</title>
+    <title>FICS</title>
 </head>
 <body>
 <div class="container">
@@ -20,7 +20,7 @@
     <table>
         <tr>
 
-            <td><label for="id">ID:</label><input type="text" id="id" class="form-control" th:field="*{id}" disabled/></td>
+            <td><label for="id">ID:</label><input type="text" id="id" class="form-control" th:field="*{id}" /></td>
         </tr>
         <tr>
 
@@ -40,7 +40,7 @@
         </tr>
         <tr>
 
-            <td><label for="moddesc">Modul leírás:</label><input type="text" id="moddesc" class="form-control" th:field="*{desc}" /></td>
+            <td><label for="moddesc">Modul leírás:</label><textarea type="text" id="moddesc" class="form-control" rows="10" th:field="*{desc}" /></td>
             <td th:if="${#fields.hasErrors('desc')}" th:errors="*{desc}">Age Error</td>
         </tr>
         <tr>
