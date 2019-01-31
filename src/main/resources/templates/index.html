@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Mini URL</title>
+</head>
+<body>
+<header></header>
+<div class="container">
+
+    <div class="col-sm-12">
+        <h1>URL list</h1>
+        <p class="lead">Here you can see , all shorted url with original link.</p>
+
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div class="container">
+    <input class="form-control" id="myInput" type="text" placeholder="Search.."><br>
+    <table class="table table-bordered table-hover" id="myTable">
+        <thead>
+        <tr>
+            <th>System name</th>
+            <th>System disc</th>
+            <th>Modul name</th>
+            <th>Modul disc</th>
+        </tr>
+        </thead>
+        <tbody th:each="rendszer : ${rendszerek}" id="myTab2le">
+
+        <tr>
+            <td th:text="${rendszer.systemname}">System name</td>
+            <td th:text="${rendszer.systemdisc}">System disc</td>
+            <td th:text="${rendszer.modulname}">>Modul name</td>
+            <td th:text="${rendszer.moduldisc}">Modul disc</td>
+            <td><a data-toggle="modal" th:href="'edit-data/'+${rendszer.modulid}"><span
+                    class="glyphicon glyphicon-edit"></span></a>
+            <td><a data-toggle="modal" th:href="'delete/'+${rendszer.modulid}"><span
+                    class="glyphicon glyphicon-trash"></span></a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <form action="#" th:action="@{/add-new-system/}">
+        <button type="submit" class="btn btn-success">Rendszer hozzáadás</button>
+    </form>
+    <form action="#" th:action="@{/add-new-modul/}">
+        <button type="submit" class="btn btn-success">Modul hozzá adás</button>
+    </form>
+    <!--a data-toggle="modal" th:href="'add-new-system/'"><span class="glyphicon glyphicon-trash"></span></a>
+    <a data-toggle="modal" th:href="'add-new-modul/'"><span class="glyphicon glyphicon-trash"></span></a-->
+</div>
+
+
+</body>
+</html>
